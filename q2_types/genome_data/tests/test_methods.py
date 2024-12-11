@@ -46,7 +46,7 @@ class TestOrthologsPartitionCollating(TestPluginBase):
 
         collated_loci = collate_loci(loci_list)
         self.assertTrue(all(os.path.exists(
-            collated_loci.path / f"loci{no}.gff") for no in [1,2,3,4]))
+            collated_loci.path / f"loci{no}.gff") for no in [1, 2, 3, 4]))
 
     def test_collate_loci_file_exists(self):
         p1 = self.get_data_path("uncollated_loci_1")
@@ -60,7 +60,7 @@ class TestOrthologsPartitionCollating(TestPluginBase):
             self.assertIn("File already exists", str(w[-1].message))
 
             self.assertTrue(all(os.path.exists(
-                    collated_loci.path / f"loci{no}.gff") for no in [1,2]))
+                    collated_loci.path / f"loci{no}.gff") for no in [1, 2]))
 
     def test_partition_orthologs(self):
         p = self.get_data_path("collated_orthologs")
