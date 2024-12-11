@@ -87,6 +87,8 @@ setup(
              'data/genes_samples/sample2/*',
              'data/loci-invalid/*',
              'data/loci/*',
+             'data/uncollated_loci_1/*',
+             'data/uncollated_loci_2/*',
              'data/genome-sequences/*',
              'data/ortholog/*',
              'data/ortholog-annotation-extra/*',
