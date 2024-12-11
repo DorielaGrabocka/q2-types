@@ -22,7 +22,8 @@ def collate_loci(loci: LociDirectoryFormat) -> LociDirectoryFormat:
     Parameters:
     - loci: A list of LociDirectoryFormat containing the gff files.
     Returns:
-    - collated_loci: A LociDirectoryFormat object containing the collated gff files.
+    - collated_loci: A LociDirectoryFormat object containing the
+    collated gff files.
     """
     collated_loci = LociDirectoryFormat()
     for loci_dir in loci:
@@ -39,6 +40,7 @@ def collate_loci(loci: LociDirectoryFormat) -> LociDirectoryFormat:
                     f"in the destination directory."
                 )
     return collated_loci
+
 
 def collate_orthologs(orthologs: SeedOrthologDirFmt) -> SeedOrthologDirFmt:
     result = SeedOrthologDirFmt()
