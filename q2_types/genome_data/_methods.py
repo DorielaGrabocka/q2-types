@@ -27,14 +27,13 @@ def collate_loci(loci: LociDirectoryFormat) -> LociDirectoryFormat:
     """
     collated_loci = LociDirectoryFormat()
     for loci_dir in loci:
-        for fp in os.listdir(loci_dir.path):
+        for fp in loci_dir.path.iterdir():
             try:
                 duplicate(
-                    os.path.join(loci_dir.path, fp),
-                    os.path.join(collated_loci.path, fp)
+                    fp,
+                    collated_loci.path / os.path.basename(fp)
                 )
             except FileExistsError:
-                # raise a warning
                 warnings.warn(
                     f"Skipping {fp}. File already exists "
                     f"in the destination directory."
